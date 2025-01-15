@@ -1,0 +1,59 @@
+create react new project    npx create-react-app reactapp
+run project npm start 
+insall other lib    -for reletion with routes
+                        npm i react-router-dom
+                    -M UI framework
+                        npm i mui 
+                            npm i  @mui/material
+                            npm i  @emotion/react
+                            npm i  @emotion/styled
+                            npm i  axios  (f --. b commmuntion)
+
+not suggestion install 
+        npm install --save @types/react-native
+        npm install --save-dev @types/react @types/react-dom
+
+
+##################################################
+npm init
+    entry point: (index.js) app.js
+
+npm i nodemon
+
+package.json  add
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+
+create app.js
+  run app.js  after every change
+----------------------------------------
+add  express js         npm i express
+connect database   npm i mongoose
+-------------------------------------
+create folder  Controlers , Model , router
+------
+mongoDB and create account and 
+        goto Security -> Network Access
+        add IP  9allow any  where
+---------
+database access --> add new --> 
+default pass
+----
+bulit-In-Rolr
+    atles admin  -->create
+ --     
+ database  --> Clusters                          
+------
+create database connection
+(app.js code)
+-----
+database ->  connect(button) -->  mongoDB for vs code (select) --> get link
+---
+call mongoose
+
+
+
+        
+        

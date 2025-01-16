@@ -36,7 +36,7 @@ const addUsers = async (req , res , next) => {
         return res.status(404).json({message:"unable to add users"});
     }
     return res.status(200).json({users})
-}
+};
 
 
 //Get By ID
@@ -54,7 +54,7 @@ const getById = async (req , res  , next) => {
         return res.status(404).json({message:"user not found"});
     }
     return res.status(200).json({user});
-}
+};
 
 
 //Update User Details
@@ -75,10 +75,28 @@ const updateUser = async (req , res , next) => {
     }
     return res.status(200).json({users});
 
-}
+};
+
+//Delete user
+const deleteUser = async (req , res , next) => {
+    const id=req.params.id;
+
+    let user;
+
+    try{
+        user =await User.findByIdAndDelete(id);
+    }catch{
+        console.log(err);
+    }
+    if(!user){
+        return res.status(404).json({message:"unable to delete"});
+    }
+    return res.status(200).json({user});
+};
 
 //export  all users
 exports.getAllUsers = getAllUsers;
 exports.addUsers = addUsers;
 exports.getById = getById;
 exports.updateUser = updateUser;
+exports.deleteUser = deleteUser;

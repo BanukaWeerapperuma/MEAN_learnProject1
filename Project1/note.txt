@@ -52,6 +52,13 @@ create database connection
 database ->  connect(button) -->  mongoDB for vs code (select) --> get link
 ---
 call mongoose
+-----------
+goto postman and add "+"
+and select GET and add http://Localhost:5000/users
+--------------------
+
+
+
 
 
 

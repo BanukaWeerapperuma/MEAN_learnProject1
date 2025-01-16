@@ -1,12 +1,14 @@
 const express =require("express");    //add ex to app
 const mongoose =require("mongoose");  // add mon. to app
+const router = require("./Route/userRouters");
 
 const app = express();
 
-//Middleware
-app.use("/" ,(req,res ,next)=>{
-    res.send("It IS working");
-})
+app.use(express.json());
+//Middleware --- show backend part
+app.use("/users" , router);
+
+
 
 //call mongoose //db connection
 

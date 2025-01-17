@@ -1,0 +1,89 @@
+/* user.css */
+
+/* Body should use flexbox for centering */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+
+  margin: 0; /* Remove default margin */
+}
+
+/* User card styles */
+.user-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px;
+  max-width: 400px;
+  background-color: #fff; /* Set background to white for contrast */
+  
+}
+
+/* Centered heading */
+.user-card h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Paragraph and span styles */
+.user-card p {
+  margin: 6px 0;
+  font-size: 1em;
+  color: #f80404;
+  text-align: justify;
+}
+
+.user-card p span {
+  font-weight: bold;
+  color: #000;
+  margin-left: 8px;
+  font-style: italic;
+}
+
+/* Button styles */
+.user-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  outline: none;
+}
+
+.user-card button:hover {
+  background-color: #0056b3;
+}
+
+.user-card button:active {
+  background-color: #004080;
+}
+
+/* Last button style (Delete) */
+.user-card button:last-child {
+  background-color: #dc3545;
+}
+
+.user-card button:last-child:hover {
+  background-color: #a71d2a;
+}
+
+.user-card button:last-child:active {
+  background-color: #7d0c19;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+  .user-card {
+    margin: 8px;
+  }
+}

@@ -9,6 +9,10 @@ insall other lib    -for reletion with routes
                             npm i  @emotion/styled
                             npm i  axios  (f --. b commmuntion)
 
+compile Error
+      Run the following command to install the web-vitals package:
+                                npm install web-vitals
+
 not suggestion install 
         npm install --save @types/react-native
         npm install --save-dev @types/react @types/react-dom

@@ -58,6 +58,7 @@ function AddUser() {
         <br />
         <div className="form-buttons">
         <button >Add User</button>
+        
         <button type="button" onClick={() => navigate('/')}>
           Cancel
         </button>

@@ -1,5 +1,9 @@
 import React from 'react';
 import './user.css';
+import { Link } from 'react-router-dom';
+
+
+
 
 function User({ user }) {
   if (!user) {
@@ -8,9 +12,8 @@ function User({ user }) {
 
   const { _id, name, gmail, age, address } = user;
 
-  const handleUpdate = () => {
-    console.log(`Update user with ID: ${_id}`);
-  };
+  
+
 
   const handleDelete = () => {
     console.log(`Delete user with ID: ${_id}`);
@@ -25,8 +28,8 @@ function User({ user }) {
       <p><span>Gmail:</span> {gmail}</p>
       <p><span>Age:</span> {age}</p>
       <p><span>Address:</span> {address}</p>
-
-      <button onClick={handleUpdate}>Update</button>
+      
+      <Link to={`/userdetails/${_id}`}>update</Link>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );

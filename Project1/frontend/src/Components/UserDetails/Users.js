@@ -5,6 +5,7 @@ import './users.css';
 import jsPDF from 'jspdf';
 
 
+
 const URL = "http://localhost:5000/users";
 
 const fetchHandler = async () => {
@@ -87,9 +88,44 @@ function Users() {
     doc.save('user-list.pdf');
   };
 
+  const[searchQuery , setSearchQuery] = useState("");
+  const[noResults , setNoResults] = useState(false);
+
+  const handleSearch = () => {
+    fetchHandler().then((data) => {
+      const usersData = data.users || []; // Ensure `data.users` is a valid array
+      const filteredUsers = usersData.filter((user) =>
+        Object.values(user).some((field) =>
+          field.toString().toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+      setUsers(filteredUsers);
+      setNoResults(filteredUsers.length === 0);
+    }).catch((error) => {
+      console.error('Error during search:', error);
+      setUsers([]); // Reset users on error
+      setNoResults(true); // Indicate no results
+    });
+  };
+  
+
+
   return (
     <div className="Users">
       <h1>User Details Display Page</h1>
+
+      <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search for a user" />
+
+      <button onClick={handleSearch}>Search</button>
+
+
+      {noResults ? (
+        <div>
+          <p>No users found matching the search query.</p>
+        </div>
+      
+    ):(
+
       <div ref={componentsRef} className="user-list">
         {users.length > 0 ? (
           users.map((user, i) => (
@@ -99,6 +135,8 @@ function Users() {
           <p>No users found!</p>
         )}
       </div>
+
+        )}
 
       {/* Button to trigger PDF generation */}
       <button className="print-button" onClick={generatePDF}>Generate Colorful PDF</button>

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './UpdateUser.css';
-import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "./UpdateUser.css";
+import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
 
 function UpdateUser() {
   const [inputs, setInputs] = useState({
@@ -11,7 +11,6 @@ function UpdateUser() {
     address: "",
   });
 
-  
   const navigate = useNavigate();
   const id = useParams().id;
 
@@ -50,7 +49,7 @@ function UpdateUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(() => navigate('/userdetails'));
+    sendRequest().then(() => navigate("/userdetails"));
   };
 
   return (
@@ -98,7 +97,7 @@ function UpdateUser() {
         <br />
         <div className="form-buttons">
           <button type="submit">Update User</button>
-          <button type="button" onClick={() => navigate('/')}>
+          <button type="button" onClick={() => navigate("/")}>
             Cancel
           </button>
         </div>

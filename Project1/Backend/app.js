@@ -20,3 +20,25 @@ mongoose.connect("mongodb+srv://admin:R1s713fdUusTgDUj@cluster0.b5sbo.mongodb.ne
     app.listen(5000);
 })
 .catch((err)=>console.log((err)));
+
+//Call register Model
+require("./Model/Register");
+const User =mongoose.model("Register");
+
+//Register User
+app.post("/register", async (req,res)=>{
+    const {name,gmail,password} = req.body;
+    
+    try{
+        await User.create({
+            name,
+            gmail,
+            password
+        })
+        res.send({status: 200, message: "User Registered Successfully"});
+    }catch(err){
+        res.send({status: 400, message: "Something went wrong"});
+    }
+});
+
+

@@ -27,6 +27,14 @@ function Nav() {
           <h1>Register</h1>
           </Link>
         </li>
+
+        <li className="home-ll">
+          <Link to="/login" className="active home-a">
+          <h1>Login</h1>
+          </Link>
+        </li>
+
+
       </ul>
     </div>
   );

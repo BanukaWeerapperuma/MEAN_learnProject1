@@ -41,4 +41,26 @@ app.post("/register", async (req,res)=>{
     }
 });
 
+//Login User
+app.post("/login", async (req, res) => {
+    const { gmail, password } = req.body;
+
+    try {
+        const user = await User.findOne({ gmail }); // Check if user exists
+        if (!user) {
+            return res.status(404).json({ status: 404, message: "User not found" });
+        }
+
+        // Compare passwords
+        if (user.password === password) {
+            return res.status(200).json({ status: 200, message: "User Logged in Successfully" });
+        } else {
+            return res.status(401).json({ status: 401, message: "Incorrect Password" });
+        }
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ status: 500, message: "Server error" });
+    }
+});
+
 

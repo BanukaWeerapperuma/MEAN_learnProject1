@@ -8,6 +8,7 @@ import Nav from "./Components/Nav/Nav";
 import UpdateUser from "./Components/UpdateUser/UpdateUser";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
+import ContactUs from "./Components/ContactUs/ContactUs";
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/userdetails" element={<Users />} />
           <Route path="/regi" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/userdetails/:id" element={<UpdateUser />} />
         </Routes>
       </React.Fragment>

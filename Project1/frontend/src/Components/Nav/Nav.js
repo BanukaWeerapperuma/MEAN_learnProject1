@@ -23,6 +23,12 @@ function Nav() {
         </li>
 
         <li className="home-ll">
+          <Link to="/contactUs" className="active home-a">
+            <h1>Contact Us</h1>
+          </Link>
+        </li>
+
+        <li className="home-ll">
           <Link to="/regi" className="active home-a">
           <h1>Register</h1>
           </Link>
